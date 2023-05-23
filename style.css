@@ -1269,16 +1269,11 @@ form textarea {
         font-weight: 400; }
       .forecast-container .forecast.today .degree .num, .forecast-container .forecast.today .degree .forecast-icon {
         display: inline-block;
-        vertical-align: middle; 
-        margin-left: auto;
-        margin-right: auto;
-      }
+        vertical-align: middle; }
       .forecast-container .forecast.today .degree .num {
-        font-size: 90px; 
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-        }
+        font-size: 90px;
+        font-size: 6.4285714286rem;
+        margin-right: 30px; }
       .forecast-container .forecast.today span {
         margin-right: 20px; }
         .forecast-container .forecast.today span img {
@@ -1680,41 +1675,36 @@ form textarea {
       background: #009ad8;
       color: white; }
 
-      table.WeatherTable {
+      table.paleBlueRows {
+        font-family: "Times New Roman", Times, serif;
+        border: 3px solid #FFFFFF;
         width: 55%;
-        margin-left: 65%;
-        margin-right: auto;
+        height: 200px;
+        text-align: center;
+        border-collapse: collapse;
       }
-
-  
-    table.WeatherTable {
-        width: 65%;
-        margin-right: auto;
-        margin-left: auto; 
-    }
-
-    #WT {
-      border-collapse: collapse;
-      width: 100%;
-      text-align: center;
-    }
-    
-    #WT th {
+      table.paleBlueRows td, table.paleBlueRows th {
+        border: 2px solid #FFFFFF;
+        padding: 2px 3px;
+      }
+      table.paleBlueRows tbody td {
+        font-size: 14px;
+      }
+      table.paleBlueRows thead {
+        background: #0B6FA4;
+        border-bottom: 5px solid #FFFFFF;
+      }
+      table.paleBlueRows thead th {
+        font-size: 17px;
+        font-weight: bold;
+        color: #FFFFFF;
+        text-align: center;
+        border-left: 5px solid #FFFFFF;
+      }
+      table.paleBlueRows thead th:first-child {
+        border-left: none;
+      }
       
-      color: white;
-      font-weight: bold;
-      padding: 8px;
-      text-align: center;
-    }
-    
-    #WT td {
-      border: 1px solid #f7f4f4;
-      padding: 8px;
-      align-content: center;
-    }
-    
-    #WT tr:nth-child(even) {
-      background-color: #1d8ab9;
-    }
-  
-    
+      table.paleBlueRows tfoot td {
+        font-size: 14px;
+      }

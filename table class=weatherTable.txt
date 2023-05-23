@@ -1,0 +1,73 @@
+<table class="weatherTable">					
+			<table id="weatherTable">
+				<div style="border: solid 1px black; float: right;">
+					<table cellpadding="5px" cellspacing="0" border="1">
+				<span><tr>
+					<th>Temperature</th>
+					<th>Humidity</th>
+					<th>Wind Speed</th>
+					<th>Atmospheric Pressure</th>
+					<th>Cloud Conditions</th>
+				</tr></span>
+			</table>
+			</table>
+
+
+
+   table {
+        width: 55%;
+        margin-left: 460px;
+        margin-right: auto;
+        
+    }
+    table.menu {
+        width: 65%;
+        margin-right: auto;
+        margin-left: auto;
+
+
+
+<thead><tr>
+							<th title="Field #1">Temperature in Celsius</th>
+							<th title="Field #2">Epochtime</th>
+							<th title="Field #3">Humidity</th>
+							<th title="Field #4">Wind Speed</th>
+							<th title="Field #5">Wind Direction</th>
+							<th title="Field #6">Atmospheric Pressure</th>
+							<th title="Field #7">Cloud Conditions</th>
+							</tr></thead>
+							<tbody><tr>
+							<td align="right">-23.9</td>
+							<td align="right">1679419200</td>
+							<td align="right">70</td>
+							<td align="right">18.5</td>
+							<td>E</td>
+							<td align="right">980.4</td>
+							<td align="right">100</td>
+							</tr>
+							</tbody>
+
+
+
+
+		#WT {
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+			
+			#WT th {
+			  
+			  color: white;
+			  font-weight: bold;
+			  padding: 8px;
+			  text-align: left;
+			}
+			
+			#WT td {
+			  border: 1px solid #ddd;
+			  padding: 8px;
+			}
+			
+			#WT tr:nth-child(even) {
+			  background-color: #14759f;
+			}

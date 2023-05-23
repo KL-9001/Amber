@@ -1,0 +1,89 @@
+INSTANCE_NAME="$REGION-$ENVIRONMENT-instance-$INSTANCE_ID
+
+
+<div class="forecast-table">
+				<div class="container">
+					<div class="forecast-container">
+						<div class="today forecast">
+							<div class="forecast-header">
+								<div class="day">Current Weather</div>
+								<div class="date">24 March 2023</div>
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="location">McMurdo</div>
+								<div class="degree">
+									<div class="num">23<sup>o</sup>C</div>
+									<div class="forecast-icon">
+										<img src="images/icons/icon-1.svg" alt="" width=90>
+									</div>	
+								</div>
+								<span><img src="images/icon-umberella.png" alt="">20%</span>
+								<span><img src="images/icon-wind.png" alt="">18km/h</span>
+								<span><img src="images/icon-compass.png" alt="">East</span>
+							</div>
+						</div>
+						
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+ <title>Weather</title>
+    <script>
+        window.addEventListener("load", function() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = parseCsv(this.responseText);
+                    updateTable(data);
+                }
+            };
+            xmlhttp.open("GET", "weather.csv", true);
+            xmlhttp.send();
+        });
+
+        function parseCsv(csv) {
+            var lines = csv.split("\n");
+            var result = [];
+            var headers = lines[0].split(",");
+            for (var i = 1; i < lines.length; i++) {
+                var obj = {};
+                var currentLine = lines[i].split(",");
+                for (var j = 0; j < headers.length; j++) {
+                    obj[headers[j]] = currentLine[j];
+                }
+                result.push(obj);
+            }
+            return result;
+        }
+
+        function updateTable(data) {
+            var table = document.getElementById("weatherTable");
+            for (var i = 0; i < data.length; i++) {
+                var row = table.insertRow(-1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                cell1.innerHTML = data[i]["Temperature (F)"] + " F / " + ((data[i]["Temperature (F)"] - 32) * 5 / 9).toFixed(1) + " C";
+                cell2.innerHTML = data[i]["Humidity"] + " %";
+                cell3.innerHTML = data[i]["Wind Speed"] + " mph";
+                cell4.innerHTML = data[i]["Atmospheric Pressure"] + " mb";
+                cell5.innerHTML = data[i]["Cloud Conditions"];
+            }
+        }
+    </script>
+</head>
+<body>
+    <table id="weatherTable">
+        <tr>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Wind Speed</th>
+            <th>Atmospheric Pressure</th>
+            <th>Cloud Conditions</th>
+        </tr>
+    </table>
+
